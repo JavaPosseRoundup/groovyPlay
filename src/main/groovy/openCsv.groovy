@@ -15,7 +15,7 @@ Map rowsGroupedByDepHour = rows.groupBy { it.DEP_TIME_BLK }
 println "Grouped: " + rowsGroupedByDepHour
 
 rowsGroupedByDepHour.each { departureHour, departures ->
-    println "DepartureHour (" + departureHour + ") : "
+    println "Departure Time Block (" + departureHour + ") : "
     def departureDelays = departures.collect {it.DEP_DELAY}
     println departureDelays
     def avgDelayMin = departureDelays.findAll{ delay -> delay =~ /\-?[0-9]+(.\?[0-9]+)?/ }.collect{it.toFloat()}.sum() / departureDelays.size()
