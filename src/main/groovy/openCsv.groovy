@@ -7,7 +7,7 @@ def TEST_OUTPUT_FILE_NAME = 'testOut.csv'
 List<String[]> rows = new CSVReader(new FileReader(new File(TEST_FILE_NAME)), CSVParser.DEFAULT_SEPARATOR, CSVParser.DEFAULT_ESCAPE_CHARACTER, CSVParser.DEFAULT_QUOTE_CHARACTER, 1).readAll()
 
 List ourImportantColums = rows.drop(1).collect {
-        [it[33], it[37]]
+    [it[33], it[37]]
 }
 
 Map<String, String[]> rowsGroupedByDepHour = ourImportantColums.groupBy { it[1] }
