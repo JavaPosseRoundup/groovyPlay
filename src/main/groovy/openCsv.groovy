@@ -28,7 +28,6 @@ println "Grouped: " + rowsGroupedByDepHour
 rowsGroupedByDepHour.sort().each { departureHour, departures ->
     println "DepartureHour (" + departureHour + ") : "
     def departureDelays = departures.collect {it.DEP_DELAY}
-    println departureDelays
     def avgDelayMin = departureDelays.collect{it.toFloat()}.sum() / departureDelays.size()
     println "Average for this hour: " + avgDelayMin
 }
